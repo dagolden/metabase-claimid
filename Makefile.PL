@@ -14,6 +14,7 @@ requires 'Catalyst::View::TD';
 requires 'Config::General';
 requires 'Email::MIME::Kit';
 requires 'Email::MIME::Kit::Renderer::TT';
+requires 'Email::Sender::Transport::Sendmail';
 requires 'JSON::Any';
 requires 'Moose' => '0.90';
 requires 'MooseX::LazyRequire';
