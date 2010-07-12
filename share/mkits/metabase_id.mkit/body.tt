@@ -1,3 +1,14 @@
 Hello [% address %]
 
-Your metabase id is attached to this email.
+A request was made at http://metabase.cpantesters.org/ for a CPAN Testers
+Metabase profile to be sent to this email address.
+
+Your metabase ID file is attached to this email.  See instructions on
+http://wiki.cpantesters.org/wiki/GettingStarted for how to install and
+configure your ID file with CPAN Testers 2.0.
+
+Sincerely,
+
+The CPAN Testers Administrators
+
+

@@ -143,7 +143,8 @@ sub resolve {
     die "No entry for $address"
         unless $self->entry_exists($address);
 
-    my $entry = $self->_resolve_entry($self->_entry_get($address) . ".json");
+    my $entry = $self->_resolve_entry($self->_entry_get($address));
+    $entry ||= $self->_resolve_entry($self->_entry_get($address) . ".json");
     die "No metabase id for $address"
         unless $entry;
 
