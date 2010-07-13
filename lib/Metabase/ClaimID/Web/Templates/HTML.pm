@@ -33,12 +33,17 @@ page index => sub {
 page id_sent => sub {
     my ($self, $vars) = @_;
     h1 { 'Metabase ID sent to ' . $vars->{sent_to} };
+    p  {
+      outs('You may return to the ');
+      a { attr { href => 'http://metabase.cpantesters.org'} 'Metabase Home Page' };
+    }
 };
 
 page not_found => sub {
     my ($self, $vars) = @_;
     h1 { 'No entry found for ' . $vars->{address} };
     p  { 'Do you want to claim another address?' };
+    $vars->{address} = 'Your Email Address';
     show form => $vars;
 };
 
@@ -64,6 +69,8 @@ private template form => sub {
             attr {
                 type => 'text', name => 'email', id => 'email',
                 value => $vars->{address} // 'Your Email Address',
+                onclick => "this.value=this.value=='Your Email Address'?'':this.value",
+                onblur => "this.value=!this.value?'Your Email Address':this.value",
             };
         };
 
